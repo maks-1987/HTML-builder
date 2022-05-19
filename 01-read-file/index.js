@@ -3,9 +3,9 @@ const fs = require('fs');
 
 const { stdout } = process;
 
-const pathToFIle = path.resolve('./01-read-file');
+const pathToFIle = path.join(__dirname, 'text.txt');
 
-const readFile = fs.createReadStream(pathToFIle + '/text.txt');
+const readFile = fs.createReadStream(pathToFIle);
 readFile.on('data', (data) => {
   stdout.write(data);
 });
