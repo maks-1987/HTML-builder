@@ -18,3 +18,9 @@ stdin.on('data', (data) => {
 process.on('exit', () => {
   stdout.write('Good bye!');
 });
+
+function handle(signal) {
+  exit();
+}
+
+process.on('SIGINT', handle);
